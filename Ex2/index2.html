@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/app2.css">
+</head>
+<body>
+    <div class="container">
+        <!-- @content -->
+        <div class="content">
+            <!-- @icon -->
+            <div class="icon">
+                ☹️ 
+            </div>
+            <!-- @title -->
+            <div class="title">
+                <h1>I Know your <b>Gender</b></h1>
+            </div>
+            <!-- @result-container -->
+            <div class="result-container">
+                <form action="#" onsubmit="guessGender()">
+                    <input type="text" placeholder="Tell me your name" id="username"> 
+                    <button id="btn-guess" type="submit">Guess</button>
+                    <div class="loading" id="loading-text" hidden>Loading...</div>
+                </form>
+                <div class="generator">
+                    <!-- @name -->
+
+                    <!-- @gender -->
+
+                    <!-- @percent -->
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const loadingTextEle = document.getElementById("loading-text");
+        const guess = document.getElementById("btn-guess");
+        const username = document.getElementById("username");
+
+        function guessGender(){
+            loadingTextEle.hidden = false;
+            document.querySelector(".generator").hidden = true;
+            var url = "https://api.genderize.io/?name=" + `${username.value}`;
+            fetch(url) .then(async (res) =>{
+                let data = await res.json();
+                loadingTextEle.hidden = true;
+
+                const tmp = `
+                        <div class="name" id="Name"><h2>${data.name}</h2></div>  
+                        <div class="gender" id="Gender"><h1>${data.gender}</h1></div>    
+                        <div class="percent" id="Percent"><h1>${Number(data.probability *100).toFixed(0)}%</h1></div>
+                `
+                document.querySelector(".generator").innerHTML = tmp
+                document.querySelector(".generator").hidden = false;
+            })
+        }
+    </script>
+</body>
+</html>

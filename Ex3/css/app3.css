@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Hanuman:wght@300;400;700&family=Julee&family=Koulen&family=Roboto+Condensed:wght@400;700&family=Roboto+Mono&family=Roboto+Slab&family=Roboto:wght@300;400;700&family=Rubik:wght@500&family=Shadows+Into+Light&family=Shantell+Sans:wght@400;500;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .content{
+    width: 40%;
+    height: 90%;
+    background-color: #fff;
+    text-align: center;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.26);
+}
+.container .content .icon{
+    font-size: 90px;
+}
+.container .content .title{
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Julee', cursive;
+}
+.container .content .title b{
+    color: #2F58CD;
+}
+.container .content .input-data{
+    margin-top: 20px;
+}
+.container .content .input-data input{
+    padding: 12px 25px;
+    border: 0.5px solid #B2B2B2;
+    border-radius: 7px;
+}
+.container .content .input-data input::placeholder{
+    color: #B2B2B2;
+    font-size: 15px;
+}
+.container .content .input-data button{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    padding: 11px 22px;
+    border: none;
+    border: 0.5px solid #B2B2B2;
+    border-radius: 7px;
+    background-color: #2F58CD;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+.container .content .result-box{
+    width: 327px;
+    height: 300px;
+    /* background-color: black; */
+    text-align: center;
+    margin: 20px auto;
+}
+.container .content .result-box .box1{
+    width: 100%;
+    height: 15%;
+    margin-bottom: 8px;
+    background-color: #F5F5F5;
+    border: 1px solid #B2B2B2;
+    border-radius: 10px;
+    padding: 3px 10px;
+    padding-top: 7px;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+.box1 .country h1{
+    float: left;
+}
+.box1 .percent h1{
+    float: right;
+    color: #E14D2A;
+}
+.loading{
+    padding-top:80px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
